@@ -58,7 +58,6 @@ i
     border-radius: 30px;
     box-shadow: 15px 35px 40px 1px hsl(269 35.09% 88.1%);
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
 .celular:hover
@@ -66,6 +65,13 @@ i
     transform: translateY(-5px);
 }
 
+.limite-tela-celular
+{
+    width: 17rem;
+    height: 35.2rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
 .tela-celular-inicial
 {
     position: absolute;
@@ -118,8 +124,8 @@ i
 .detalhe-cabecalho
 {
     position: absolute;
-    top: -1rem;
-    right: 3.5rem;
+    top: 0;
+    right: 3.8rem;
     width: 58%;
     height: 2.5rem;
     background-color: hsl(0, 0%, 100%);
