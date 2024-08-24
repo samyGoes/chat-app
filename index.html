@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <script src="https://kit.fontawesome.com/a5226a0b94.js" crossorigin="anonymous"></script>
+        
+        <title> Chat App </title>
+    </head>
+    <body>
+        
+        <div class="forma-fundo"></div>
+
+        <div class="container">
+
+            <!-- CELULAR -->
+            <div class="celular">
+                <!-- TELA INICIAL -->
+                <div class="tela-celular-inicial">
+                    wa
+                    <i class="fa-solid fa-angle-right" id="tela-celular-inicial-seta"></i>
+                </div>
+
+                <!-- APP -->
+                <div class="tela-celular">
+                    <!--CABEÇALHO  -->
+                    <div class="tela-celular-cabecalho">
+                        <div class="detalhe-cabecalho"></div>
+
+                        <div class="tela-celular-cabecalho-box">
+                            <i class="fa-solid fa-angle-left" id="tela-celular-cabecalho-box-seta"></i>
+                            <div class="tela-celular-cabecalho-box-img">
+                                <img src="img/avatar.jpg" alt="foto de perfil">
+                            </div>
+                            <div class="tela-celular-cabecalho-box-info">
+                                <span class="tela-celular-cabecalho-box-info-nome"> Samuel Green </span>
+                                <span class="tela-celular-cabecalho-box-info-status"> Available to Walk </span>
+                            </div>
+                        </div>   
+                        <div class="tela-celular-cabecalho-box-menu">
+                            <i class="fa-solid fa-ellipsis-vertical" id="tela-celular-cabecalho-menu"></i>
+                            <div class="tela-celular-cabecalho-opcao-menu"> Mudar tema </div>
+                        </div>                               
+                    </div>
+
+                    <!-- TELA APP MENSAGENS -->
+                    <div class="tela-celular-box-mensagens">
+                        <!-- MENSAGEM DA OUTRA PESSOA -->
+                        <div class="tela-celular-box-mensagens-outro">
+                            <p>That sounds great. I'd be happy with that.</p>
+                        </div>
+                        <p class="tela-celular-box-mensagens-outro">
+                            Could you send over some pictures of your dog, please?
+                        </p>
+
+                        <!-- MENSAGEM DAS MINHAS FOTOS -->
+                        <div class="tela-celular-box-mensagens-box-img-voce">
+                            <div class="box-img-voce">
+                                <img src="img/dog-image-1.jpg" alt="foto de cachorro">
+                            </div>
+                            <div class="box-img-voce">
+                                <img src="img/dog-image-2.jpg" alt="foto de cachorro">
+                            </div>
+                            <div class="box-img-voce">
+                                <img src="img/dog-image-3.jpg" alt="foto de cachorro">
+                            </div>
+                        </div>
+
+                        <!-- MINHA MENSAGEM -->
+                        <p class="tela-celular-box-mensagens-voce">
+                            Here are a few pictures. She's a happy girl!
+                        </p>
+                        <p class="tela-celular-box-mensagens-voce">
+                            Can you make it?
+                        </p>
+
+                        <!-- MENSAGEM DA OUTRA PESSOA -->
+                        <p class="tela-celular-box-mensagens-outro">
+                            She looks so happy! The time we discussed works. How long shall I take her out for?
+                        </p>
+                        <!-- MENSAGEM COM OS RADIO BUTTON -->
+                        <form action="#" method="#" class="tela-celular-box-mensagens-form-outro">
+                            <div class="tela-celular-box-mensagens-radio-button-outro">
+                                <label for="radio-button" class="label-radio-button"></label>
+                                <input type="radio" id="radio-button" name="radio-button">
+
+                                <span class="tela-celular-box-mensagens-radio-button-titulo-outro"> 30 minute walk </span>
+                                <span class="tela-celular-box-mensagens-radio-button-preco-outro"> $29 </span>
+                            </div>
+
+                            <div class="tela-celular-box-mensagens-radio-button-outro">
+                                <label for="radio-button" class="label-radio-button"></label>
+                                <input type="radio" id="radio-button" name="radio-button">
+
+                                <span class="tela-celular-box-mensagens-radio-button-titulo-outro"> 1 hour walk </span>
+                                <span class="tela-celular-box-mensagens-radio-button-preco-outro"> $49 </span>
+                            </div>
+                        </form>
+                    </div>
+                
+                    <!-- ESCREVER E ENVIAR A MENSAGEM -->
+                    <form action="#" method="#" class="tela-celular-box-escrever-mensagem">
+                        <input type="text" placeholder="Type a message…">
+                        <button type="submit"><i class="fa-solid fa-angle-right"></i></button>
+                    </form>
+                </div> <!-- FIM DA TELA -->
+
+                
+            </div>
+
+            <!-- TEXTO -->
+            <div class="box-texto">
+                <h1> Simple booking </h1>
+                <p>
+                    Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+                    discuss arrangements and make bookings. Once the walk has been completed you can rate 
+                    your walker and book again all through the chat.
+                </p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

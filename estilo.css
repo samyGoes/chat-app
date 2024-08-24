@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+}
+i
+{
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+.forma-fundo
+{
+    position: absolute;
+    top: 0;
+    left: -5rem;
+    width: 32rem;
+    height: 88%;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    background: linear-gradient(to top, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+}
+
+.container
+{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+    margin-left: 8rem;
+}
+
+
+/* CELULAR */
+.celular
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36.7rem;
+    width: 18.5rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 30px;
+    box-shadow: 15px 35px 40px 1px hsl(269 35.09% 88.1%);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.celular:hover
+{
+    transform: translateY(-5px);
+}
+
+.tela-celular-inicial
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(264, 100%, 61%);
+    width: 17rem;
+    height: 35.2rem;
+    border-radius: 20px;
+}
+.tela-celular
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 17rem;
+    height: 35.2rem;
+    background-color: hsl(270, 20%, 96%);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 3.9rem;
+    transition: all 0.5s ease;
+}
+
+.tela-celular-cabecalho
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    border-radius: 10px;
+    background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    z-index: 2;
+}
+.tela-celular-cabecalho-box
+{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.detalhe-cabecalho
+{
+    position: absolute;
+    top: -1rem;
+    right: 3.5rem;
+    width: 58%;
+    height: 2.5rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    z-index: 3;
+}
+
+.tela-celular-cabecalho-box-img
+{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100px;
+    border: 1px solid hsl(0, 0%, 100%);
+    overflow: hidden;
+}
+
+.tela-celular-cabecalho-box-img img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tela-celular-cabecalho-box-info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+}
+.tela-celular-cabecalho-box-info-nome
+{
+    font-weight: 400;
+    font-size: 12px;
+    color: hsl(270, 20%, 96%);
+}
+.tela-celular-cabecalho-box-info-status
+{
+    font-weight: 400;
+    font-size: 9px;
+    color: hsl(276, 100%, 81%);
+}
+#tela-celular-cabecalho-menu
+{
+    font-size: 12px;
+}
+.tela-celular-cabecalho-box-menu
+{
+    position: relative;
+}
+.tela-celular-cabecalho-opcao-menu
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    width: 5rem;
+    height: 2rem;
+    background-color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid hsl(263, 50%, 83%);
+
+    font-size: 10px;
+    color: hsl(276, 55%, 52%);
+}
+.tela-celular-cabecalho-opcao-menu:hover
+{
+    background-color: hsl(285, 88%, 90%);
+}
+
+
+/* PARTE DAS MENSAGENS */
+.tela-celular-box-mensagens
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem;
+    gap: 0.6rem;
+}
+/* MENSAGENS */
+.tela-celular-box-mensagens-outro, .tela-celular-box-mensagens-voce
+{
+    padding: 0.5rem;
+    background-color: hsl(272, 57%, 91%);
+    font-size: 9px;
+    color: hsl(276, 55%, 52%);
+    font-weight: 400;
+    border-radius: 12px;
+    border-bottom-left-radius: 5px;
+    max-width: 62%;
+    line-height: 13px;
+    transition: all 0.5s ease;
+}
+
+/* MENSAGEM COM FOTOS */
+.tela-celular-box-mensagens-box-img-voce
+{
+    display: flex;
+    align-self: flex-end;
+    gap: 0.5rem;
+    max-width: 62%;
+}
+.box-img-voce
+{
+    width: 33.33%;
+    height: 2.8rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.box-img-voce img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* -- */
+
+.tela-celular-box-mensagens-voce
+{
+    align-self: flex-end;
+    color: hsl(271, 15%, 43%);
+    background-color: hsl(0, 0%, 100%);
+    border-bottom-right-radius: 5px;
+}
+
+
+/* RADIO BUTTON */
+.tela-celular-box-mensagens-form-outro
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.tela-celular-box-mensagens-radio-button-outro
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 76%;
+    height: 2.4rem;
+    padding: .5rem;
+    border-radius: 10px;
+    border-bottom-left-radius: 5px;
+    background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+#radio-button
+{
+    display: none;
+}
+.label-radio-button
+{
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+    border: 2px solid hsl(289, 100%, 72%);
+    cursor: pointer;
+}
+#radio-button:checked + .label-radio-button
+{
+    background-color: hsl(0, 0%, 100%);
+}
+
+.tela-celular-box-mensagens-radio-button-titulo-outro
+{
+    font-size: 10px;
+    color: hsl(270, 20%, 96%);
+    font-weight: 400;
+    margin-left: .5rem;
+}
+.tela-celular-box-mensagens-radio-button-preco-outro
+{
+    position: absolute;
+    right: 1.2rem;
+    font-size: 13px;
+    color: hsl(270, 20%, 96%);
+    font-weight: 700;
+}
+
+
+/* ESCREVER E ENVIAR MENSAGEM */
+.tela-celular-box-escrever-mensagem
+{
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    height: 2.5rem;
+    padding: 5px;
+    border-radius: 20px;
+    z-index: 2;
+    position: absolute;
+    left: 0.6rem;
+    bottom: .6rem;
+    background-color: hsl(0, 0%, 100%);
+}
+.tela-celular-box-escrever-mensagem input
+{
+    border: none;
+    outline: none;
+    font-size: 11px;
+    font-weight: 400;
+    color: hsl(276, 55%, 52%);
+    margin-left: 1.5rem;
+    width: 11rem;
+}
+.tela-celular-box-escrever-mensagem input::placeholder
+{
+    color: hsl(206, 6%, 79%);
+}
+.tela-celular-box-escrever-mensagem button
+{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100px;
+    background-color: hsl(271, 36%, 24%);
+    cursor: pointer;
+}
+.tela-celular-box-escrever-mensagem button i
+{
+    font-size: 15px;
+}
+
+
+
+/* TEXTO */
+.box-texto
+{
+    display: flex;
+    flex-direction: column;
+    width: 28rem;
+    gap: 1rem;
+}
+
+.box-texto h1
+{
+    color: hsl(271, 36%, 24%);
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.box-texto p
+{
+    font-size: 16px;
+    color: hsl(270, 7%, 64%);
+    font-weight: 400;
+    line-height: 26px;
+}
+
+
+
+/* RESPONSIVIDADE */
