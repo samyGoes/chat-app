@@ -111,8 +111,10 @@ i
     padding: 1rem;
     padding-bottom: 0rem;
     border-radius: 10px;
+    border: 1px solid hsl(270, 20%, 96%);
     background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
     z-index: 2;
+    transition: all .5s ease;
 }
 .tela-celular-cabecalho-box
 {
@@ -168,7 +170,7 @@ i
     font-size: 9px;
     color: hsl(276, 100%, 81%);
 }
-#tela-celular-cabecalho-menu
+#tela-celular-cabecalho-btn-menu
 {
     font-size: 12px;
 }
@@ -176,17 +178,15 @@ i
 {
     position: relative;
 }
-.tela-celular-cabecalho-opcao-menu
+.tela-celular-cabecalho-menu
 {
     display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
     border-radius: 5px;
     position: absolute;
     right: 0;
-    width: 5rem;
-    height: 2rem;
+    
     background-color: hsl(0, 0%, 100%);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -195,7 +195,16 @@ i
     font-size: 10px;
     color: hsl(276, 55%, 52%);
 }
-.tela-celular-cabecalho-opcao-menu:hover
+.tela-celular-cabecalho-menu-btn-tema, .tela-celular-cabecalho-menu-btn-papel-parede
+{
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 1.6rem;
+    padding: .5rem;
+    transition: all .5s ease;
+}
+.tela-celular-cabecalho-menu-btn-tema:hover, .tela-celular-cabecalho-menu-btn-papel-parede:hover
 {
     background-color: hsl(285, 88%, 90%);
 }
