@@ -11,9 +11,16 @@ const setaInicial = document.querySelector("#tela-celular-inicial-seta");
     // MENSAGENS //
     const boxMinhasMsg = document.querySelectorAll(".tela-celular-box-mensagens-voce")
     const boxOutroMsg = document.querySelectorAll(".tela-celular-box-mensagens-outro");
+    const boxRadioBtnOutro = document.querySelectorAll(".tela-celular-box-mensagens-radio-button-outro");
 
     const cabecalho = document.querySelector(".tela-celular-cabecalho");
+
+    // PAPEL DE PAREDE //
+    const inputImg = document.querySelector("#inputImg");
     //#endregion
+
+    const inputMsg = document.querySelector("#inputMsg");
+    const formulario = document.querySelector(".tela-celular-box-escrever-mensagem");
 //#endregion
 
 
@@ -53,6 +60,11 @@ function mudaTema()
                 boxOutroMsg[i].style.backgroundColor = "hsl(238.15 28.53% 38.71%)";
                 boxOutroMsg[i].style.color = "hsl(271 68.54% 87.96%)"; 
             }  
+            for(let i = 0; i < boxRadioBtnOutro.length; i++)
+            {
+                console.log("entrou no for do radio btn");
+                boxRadioBtnOutro[i].style.background = "linear-gradient(to right, hsl(293 54.06% 26.67%), hsl(241.44 66.86% 60.06%))";
+            }  
             tema = "escuro";
         }
         //#endregion
@@ -74,12 +86,61 @@ function mudaTema()
                 boxOutroMsg[i].style.backgroundColor = "hsl(272, 57%, 91%)";
                 boxOutroMsg[i].style.color = "hsl(276, 55%, 52%)"; 
             }  
+            for(let i = 0; i < boxRadioBtnOutro.length; i++)
+            {
+                boxRadioBtnOutro[i].style.background = "linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%))";
+            }  
             tema = "claro";
         }
         //#endregion
     });        
 }
 mudaTema();
+
+function papelDeParede()
+{
+    inputImg.addEventListener("change", event =>
+    {
+        const url = URL.createObjectURL(event.target.files[0]);
+        telaCelular.style.background = "url('" + url + "')";
+        telaCelular.style.backgroundSize = "cover";
+        telaCelular.style.backgroundPosition = "center";
+        telaCelular.style.backgroundColor = "hsl(0 0% 45.03%)";
+        telaCelular.style.backgroundBlendMode = "multiply";
+
+        //teste();
+    });
+}
+papelDeParede();
+
+let a = 0;
+function teste()
+{
+    let fP = papelDeParede();
+    
+    if(fP != undefined)
+    {
+        console.log("ON");
+    }
+    else
+    {
+        console.log("OFF" + a++);
+    }
+}
+teste();
+
+function enviaMsg()
+{
+    formulario.addEventListener("submit", function(e)
+    {
+        let mensagem = inputImg.value;
+        console.log(mensagem);
+
+        // Impede o envio do form
+        e.preventDefault();
+    })
+}
+enviaMsg();
 
 function voltar()
 {

@@ -97,6 +97,9 @@ i
     overflow: hidden;
     padding-bottom: 3.9rem;
     transition: all 0.5s ease;
+
+    background-size: cover;
+    background-position: center;
 }
 
 .tela-celular-cabecalho
@@ -209,6 +212,10 @@ i
     background-color: hsl(285, 88%, 90%);
 }
 
+#inputImg
+{
+    display: none;
+}
 
 /* PARTE DAS MENSAGENS */
 .tela-celular-box-mensagens
@@ -283,6 +290,7 @@ i
     border-radius: 10px;
     border-bottom-left-radius: 5px;
     background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    transition: all .5s ease;
 }
 #radio-button
 {

@@ -47,7 +47,8 @@
                                 <!-- MENU -->
                                 <div class="tela-celular-cabecalho-menu">
                                     <p class="tela-celular-cabecalho-menu-btn-tema"> Mudar tema </p> 
-                                    <p class="tela-celular-cabecalho-menu-btn-papel-parede"> Papel de Parede </p>
+                                    <label for="inputImg" class="tela-celular-cabecalho-menu-btn-papel-parede"> Papel de Parede </label>
+                                    <input type="file" accept="image/*" id="inputImg" name="inputImg" capture>
                                 </div>
                             </div>                               
                         </div> <!-- FIM DO CABEÇALHO -->
@@ -108,8 +109,8 @@
                         </div>
                     
                         <!-- ESCREVER E ENVIAR A MENSAGEM -->
-                        <form action="#" method="#" class="tela-celular-box-escrever-mensagem">
-                            <input type="text" placeholder="Type a message…">
+                        <form class="tela-celular-box-escrever-mensagem">
+                            <input type="text" placeholder="Type a message…" id="inputMsg" name="inputMsg">
                             <button type="submit"><i class="fa-solid fa-angle-right"></i></button>
                         </form>
                     </div> <!-- FIM DA TELA -->
