@@ -192,7 +192,6 @@ i
     
     background-color: hsl(0, 0%, 100%);
     transition: all 0.3s ease;
-    cursor: pointer;
     border: 1px solid hsl(263, 50%, 83%);
 
     font-size: 10px;
@@ -206,6 +205,7 @@ i
     height: 1.6rem;
     padding: .5rem;
     transition: all .5s ease;
+    cursor: pointer;
 }
 .tela-celular-cabecalho-menu-btn-tema:hover, .tela-celular-cabecalho-menu-btn-papel-parede:hover
 {

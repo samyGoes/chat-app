@@ -1,11 +1,13 @@
 //#region VARIÁVEIS //
 const setaVoltar = document.querySelector("#tela-celular-cabecalho-box-seta");
 const setaInicial = document.querySelector("#tela-celular-inicial-seta");
-    //#region MENU LATERAL //
+    //#region MUDAR TEMA/ABRIR E FECHAR MENU //
     const telaCelular = document.querySelector(".tela-celular");
+    const cabecalho = document.querySelector(".tela-celular-cabecalho");
     let tema = "";
     // MENU //
     const btnMenu = document.querySelector("#tela-celular-cabecalho-btn-menu");
+    const boxMenu = document.querySelector(".tela-celular-cabecalho-box-menu");
     const menu = document.querySelector(".tela-celular-cabecalho-menu");
     const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema")
     // MENSAGENS //
@@ -13,31 +15,44 @@ const setaInicial = document.querySelector("#tela-celular-inicial-seta");
     const boxOutroMsg = document.querySelectorAll(".tela-celular-box-mensagens-outro");
     const boxRadioBtnOutro = document.querySelectorAll(".tela-celular-box-mensagens-radio-button-outro");
 
-    const cabecalho = document.querySelector(".tela-celular-cabecalho");
-
     // PAPEL DE PAREDE //
     const inputImg = document.querySelector("#inputImg");
     //#endregion
 
+    //#region ENVIANDO MENSAGEM //
     const inputMsg = document.querySelector("#inputMsg");
     const formulario = document.querySelector(".tela-celular-box-escrever-mensagem");
+    const boxMsg = document.querySelector(".tela-celular-box-mensagens");
+    //#endregion
 //#endregion
 
 
 //#region FUNÇÕES //
-
 function menuLateral()
 {
-    if (menu.style.display == "none" || menu.style.display == "")
+    btnMenu.addEventListener("click", function()
     {
-        menu.style.display = "flex";
-    }
-    else
+        if (menu.style.display == "none" || menu.style.display == "")
+        {
+            menu.style.display = "flex";
+        }
+        else
+        {
+            menu.style.display = "none";
+        }
+        console.log(menuAberto);
+    });
+    console.log("entrou no if");
+    document.addEventListener("click", function(event)
     {
-        menu.style.display = "none";
-    }
+        const lugarClicado = event.target;
+        if (!boxMenu.contains(lugarClicado) )
+        {
+            menu.style.display = "none";
+        }
+    });
 }
-btnMenu.addEventListener("click", menuLateral);
+menuLateral();
 
 function mudaTema() 
 {   
@@ -53,7 +68,8 @@ function mudaTema()
             for(let i = 0; i < boxMinhasMsg.length; i++)
             {     
                 boxMinhasMsg[i].style.backgroundColor = "hsl(293.45 42.33% 29.98%)";
-                boxMinhasMsg[i].style.color = "hsl(271 68.54% 87.96%)"; 
+                boxMinhasMsg[i].style.color = "hsl(271 68.54% 87.96%)";
+                console.log(boxMinhasMsg.length);
             }
             for(let i = 0; i < boxOutroMsg.length; i++)
             {
@@ -113,45 +129,56 @@ function papelDeParede()
 }
 papelDeParede();
 
-let a = 0;
-function teste()
-{
-    let fP = papelDeParede();
+// let a = 0;
+// function teste()
+// {
+//     let fP = papelDeParede();
     
-    if(fP != undefined)
-    {
-        console.log("ON");
-    }
-    else
-    {
-        console.log("OFF" + a++);
-    }
-}
-teste();
+//     if(fP != undefined)
+//     {
+//         console.log("ON");
+//     }
+//     else
+//     {
+//         console.log("OFF" + a++);
+//     }
+// }
+// teste();
 
 function enviaMsg()
 {
     formulario.addEventListener("submit", function(e)
     {
-        let mensagem = inputImg.value;
-        console.log(mensagem);
+        // Pegando o que foi escrito
+        let mensagemEscrita = inputMsg.value;
 
         // Impede o envio do form
         e.preventDefault();
+
+        // "Criando" a mensagem
+        const mensagemEnviar = document.createElement("p");
+        mensagemEnviar.className = "tela-celular-box-mensagens-voce";
+        mensagemEnviar.innerHTML = mensagemEscrita;
+        boxMsg.appendChild(mensagemEnviar);
     })
 }
 enviaMsg();
 
 function voltar()
 {
-    telaCelular.style.transform = "translateX(105%)";
+    setaVoltar.addEventListener("click", function()
+    {
+        telaCelular.style.transform = "translateX(105%)";
+    });
 }
-setaVoltar.addEventListener("click", voltar);
+voltar();
 
 function abrirApp()
 {
-    telaCelular.style.transform = "translateX(0px)";
+    setaInicial.addEventListener("click", function()
+    {
+        telaCelular.style.transform = "translateX(0px)";
+    }); 
 }
-setaInicial.addEventListener("click", abrirApp);
-
+abrirApp();
 //#endregion
