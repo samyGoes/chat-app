@@ -84,6 +84,73 @@ i
     height: 35.2rem;
     border-radius: 20px;
 }
+/* LOGO */
+.tela-celular-inicial-logo-fofa
+{
+    width: 4rem;
+    height: 3.5rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 100px;
+    position: relative;
+}
+/* .tela-celular-inicial-logo-fofa-orelha
+{
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 2rem solid hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
+    position: absolute;
+    top: -1.5rem;
+} */
+.tela-celular-inicial-box-seta
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100px;
+    border: 1px solid hsl(0, 0%, 100%);
+    margin: 1rem 0rem 1rem 0rem;
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: hsl(271.38 55.18% 43.22%);
+}
+.tela-celular-inicial-box-seta:hover
+{
+    background-color: hsl(0, 0%, 100%);
+}
+.tela-celular-inicial-box-seta:hover > #tela-celular-inicial-seta
+{
+    color: hsl(271.38 55.18% 43.22%);
+}
+/*  CRÉDITOS */
+.tela-celular-inicial p
+{
+    font-size: 12px;
+    color: hsl(276 100% 85.82%);
+}
+.tela-celular-inicial a
+{
+    text-decoration: none;
+    color: hsl(255.29 36.4% 23.2%);
+    font-weight: 700;
+    transition: all 0.5s ease;
+}
+
+.tela-celular-inicial a:hover
+{
+    color: hsl(255, 44%, 34%);
+}
+
+.eu
+{
+    font-weight: 700;
+    color: hsl(274.67 66.21% 88.78%);
+}
+
 .tela-celular
 {
     display: flex;
@@ -197,7 +264,7 @@ i
     font-size: 10px;
     color: hsl(276, 55%, 52%);
 }
-.tela-celular-cabecalho-menu-btn-tema, .tela-celular-cabecalho-menu-btn-papel-parede
+#menuBtns
 {
     display: flex;
     align-items: center;
@@ -254,6 +321,22 @@ i
     height: 2.8rem;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+}
+.box-img-voce::before
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    content: attr(data-content);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #000;
+    position: absolute;
+
+    color: #fff;
+    font-size: 9px;
+    font-weight: 300;
 }
 .box-img-voce img
 {

@@ -1,6 +1,6 @@
 //#region VARIÁVEIS //
 const setaVoltar = document.querySelector("#tela-celular-cabecalho-box-seta");
-const setaInicial = document.querySelector("#tela-celular-inicial-seta");
+const setaInicial = document.querySelector(".tela-celular-inicial-box-seta");
     //#region MUDAR TEMA/ABRIR E FECHAR MENU //
     const telaCelular = document.querySelector(".tela-celular");
     const cabecalho = document.querySelector(".tela-celular-cabecalho");
@@ -40,9 +40,7 @@ function menuLateral()
         {
             menu.style.display = "none";
         }
-        console.log(menuAberto);
     });
-    console.log("entrou no if");
     document.addEventListener("click", function(event)
     {
         const lugarClicado = event.target;
@@ -158,11 +156,70 @@ function enviaMsg()
         // "Criando" a mensagem
         const mensagemEnviar = document.createElement("p");
         mensagemEnviar.className = "tela-celular-box-mensagens-voce";
+        mensagemEnviar.id = "msgsEnviadas";
         mensagemEnviar.innerHTML = mensagemEscrita;
         boxMsg.appendChild(mensagemEnviar);
+
+        return(mensagemEscrita);
     })
 }
-enviaMsg();
+let retornoEnviaMsg = enviaMsg();
+function msgSecreta(mensagemEscrita)
+{
+    //#region VARIÁVEIS // 
+    const dog1 = document.querySelector("#dog-1");
+    const dog2 = document.querySelector("#dog-2");
+    const dog3 = document.querySelector("#dog-3");
+
+    dog1.dataset.content = "dogas";
+    dog2.dataset.content = "pogs";
+    dog3.dataset.content = "fofo";
+    
+    let style = document.querySelector("style");
+    let dog1Before = window.getComputedStyle(dog1,':before');
+    let dog2Before = window.getComputedStyle(dog2,':before');
+    let dog3Before = window.getComputedStyle(dog3,':before');
+    //#endregion
+
+    // CLICANDO EM CADA FOTO //
+    dog1.addEventListener("click", function()
+    {
+        if(dog1Before.display == "none" || dog1Before.display == "")
+        {
+            style.sheet.insertRule(` #dog-1::before {display: flex;} `, style.sheet.cssRules.length);
+        }
+        else
+        {
+            style.sheet.insertRule(` #dog-1::before {display: none;} `, style.sheet.cssRules.length);
+        }
+        let a = mensagemEscrita;
+        console.log("Essa é a msg: ", a);
+    });
+    dog2.addEventListener("click", function()
+    {
+        if(dog2Before.display == "none" || dog2Before.display == "")
+        {
+            style.sheet.insertRule(` #dog-2::before {display: flex;} `, style.sheet.cssRules.length);
+        }
+        else
+        {
+            style.sheet.insertRule(` #dog-2::before {display: none;} `, style.sheet.cssRules.length);
+        }
+    });
+    dog3.addEventListener("click", function()
+    {
+        if(dog3Before.display == "none" || dog3Before.display == "")
+        {
+            style.sheet.insertRule(` #dog-3::before {display: flex;} `, style.sheet.cssRules.length);
+        }
+        else
+        {
+            style.sheet.insertRule(` #dog-3::before {display: none;} `, style.sheet.cssRules.length);
+        }
+    });
+    
+}
+msgSecreta(retornoEnviaMsg);
 
 function voltar()
 {
@@ -181,4 +238,18 @@ function abrirApp()
     }); 
 }
 abrirApp();
+
+function teste()
+{
+    let a = 0;
+    // console.log("função rodou");
+    for(let i = 1; i <= 5; i++)
+    {
+        a = a + 1;
+        console.log(a);
+    }
+    
+}
+teste();
 //#endregion
+
