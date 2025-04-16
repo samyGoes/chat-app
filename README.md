@@ -1,7 +1,6 @@
 # Chat App
-Design por https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY - Desafio de desenvolvimento front-end
+Design por [Frontend Mentor](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY) - Desafio de desenvolvimento front-end
 
-* O desafio era um chat app estático, porém resolvi fazer umas gracinhas com javascript :D
+O desafio era um chat app estático, porém resolvi fazer umas gracinhas com javascript :D
 
-Visualizar:
-https://samygoes.github.io/chat-app/
+[Visualizar Site](https://samygoes.github.io/chat-app/)
