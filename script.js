@@ -1,19 +1,13 @@
 //#region VARIÁVEIS //
 const setaVoltar = document.querySelector("#tela-celular-cabecalho-box-seta");
 const setaInicial = document.querySelector(".tela-celular-inicial-box-seta");
-//#region MUDAR TEMA/ABRIR E FECHAR MENU //
 const telaCelular = document.querySelector(".tela-celular");
-const cabecalho = document.querySelector(".tela-celular-cabecalho");
-let tema = "";
+let tema = "claro";
 // MENU //
 const btnMenu = document.querySelector("#tela-celular-cabecalho-btn-menu");
 const boxMenu = document.querySelector(".tela-celular-cabecalho-box-menu");
 const menu = document.querySelector(".tela-celular-cabecalho-menu");
 const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema")
-// MENSAGENS //
-const boxMinhasMsg = document.querySelectorAll(".tela-celular-box-mensagens-voce")
-const boxOutroMsg = document.querySelectorAll(".tela-celular-box-mensagens-outro");
-const boxRadioBtnOutro = document.querySelectorAll(".tela-celular-box-mensagens-radio-button-outro");
 
 // PAPEL DE PAREDE //
 const inputImg = document.querySelector("#inputImg");
@@ -26,6 +20,14 @@ const inputImg = document.querySelector("#inputImg");
     //#endregion
 //#endregion
 
+// TEMAS
+const cores = [
+    ["--tela_celular", "--cabecalho", "--borda_cabecalho", "--box_msg_o", "--box_msg_vc", "--txt_msg_vc", "--txt_msg_o", "--box_radio_btn"],
+    // TEMA CLARO
+    ["hsl(270, 20%, 96%)", "linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%))", "1px solid hsl(270, 20%, 96%)", "hsl(272, 57%, 91%)", "hsl(0, 0%, 100%)", "hsl(271, 15%, 43%)", "hsl(276, 55%, 52%)", "linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%))"],
+    // TEMA ESCURO
+    ["hsl(281.38 47.54% 11.96%)", "hsl(241.4 27.82% 20.44%)", "1px solid hsl(254.77 28.89% 36.16%)",  "hsl(238.15 28.53% 38.71%)", "hsl(293.45 42.33% 29.98%)", "hsl(271 68.54% 87.96%)", "hsl(271 68.54% 87.96%)", "linear-gradient(to right, hsl(293 54.06% 26.67%), hsl(241.44 66.86% 60.06%))"]
+]
 
 
 /**
@@ -61,57 +63,24 @@ function mudaTema()
 {   
     btnMudarTemaMenu.addEventListener("click", function()
     {
-        //#region DEIXANDO O TEMA ESCURO //
-        if(tema == "" || tema == "claro") 
+        // DEIXANDO O TEMA ESCURO
+        if(tema == "claro") 
         {
-            telaCelular.style.backgroundColor = "hsl(281.38 47.54% 11.96%)";
-            cabecalho.style.background = "hsl(241.4 27.82% 20.44%)";
-            cabecalho.style.border = "1px solid hsl(254.77 28.89% 36.16%)";
-
-            for(let i = 0; i < boxMinhasMsg.length; i++)
-            {     
-                boxMinhasMsg[i].style.backgroundColor = "hsl(293.45 42.33% 29.98%)";
-                boxMinhasMsg[i].style.color = "hsl(271 68.54% 87.96%)";
-                console.log(boxMinhasMsg.length);
+            for(let i = 0; i < cores[0].length; i++)
+            {
+                document.documentElement.style.setProperty(cores[0][i], cores[2][i])
             }
-            for(let i = 0; i < boxOutroMsg.length; i++)
-            {
-                boxOutroMsg[i].style.backgroundColor = "hsl(238.15 28.53% 38.71%)";
-                boxOutroMsg[i].style.color = "hsl(271 68.54% 87.96%)"; 
-            }  
-            for(let i = 0; i < boxRadioBtnOutro.length; i++)
-            {
-                console.log("entrou no for do radio btn");
-                boxRadioBtnOutro[i].style.background = "linear-gradient(to right, hsl(293 54.06% 26.67%), hsl(241.44 66.86% 60.06%))";
-            }  
             tema = "escuro";
         }
-        //#endregion
-        
-        //#region DEIXANDO O TEMA CLARO //
+        // DEIXANDO O TEMA CLARO 
         else 
         {
-            telaCelular.style.backgroundColor = "hsl(270, 20%, 96%)";
-            cabecalho.style.background = "linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%))";
-            cabecalho.style.border = "1px solid hsl(270, 20%, 96%)";
-
-            for(let i = 0; i < boxMinhasMsg.length; i++)
-            {     
-                boxMinhasMsg[i].style.backgroundColor = "hsl(0, 0%, 100%)";
-                boxMinhasMsg[i].style.color = "hsl(271, 15%, 43%)"; 
+            for(let i = 0; i < cores[0].length; i++)
+            {
+                document.documentElement.style.setProperty(cores[0][i], cores[1][i])
             }
-            for(let i = 0; i < boxOutroMsg.length; i++)
-            {
-                boxOutroMsg[i].style.backgroundColor = "hsl(272, 57%, 91%)";
-                boxOutroMsg[i].style.color = "hsl(276, 55%, 52%)"; 
-            }  
-            for(let i = 0; i < boxRadioBtnOutro.length; i++)
-            {
-                boxRadioBtnOutro[i].style.background = "linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%))";
-            }  
             tema = "claro";
         }
-        //#endregion
     });        
 }
 
@@ -126,10 +95,6 @@ function papelDeParede()
         telaCelular.style.background = "url('" + url + "')";
         telaCelular.style.backgroundSize = "cover";
         telaCelular.style.backgroundPosition = "center";
-        telaCelular.style.backgroundColor = "hsl(0 0% 45.03%)";
-        telaCelular.style.backgroundBlendMode = "multiply";
-
-        //teste();
     });
 }
 

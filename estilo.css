@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root
+{
+    --tela_celular: hsl(270, 20%, 96%);
+    --cabecalho: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    --borda_cabecalho: 1px solid hsl(270, 20%, 96%);
+    --box_msg_o: hsl(272, 57%, 91%);
+    --box_msg_vc: hsl(0, 0%, 100%);
+    --txt_msg_vc: hsl(271, 15%, 43%);
+    --txt_msg_o: hsl(276, 55%, 52%);
+    --box_radio_btn: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+
 *
 {
     border: 0;
@@ -172,7 +184,7 @@ i
     justify-content: flex-end;
     width: 17rem;
     height: 35.2rem;
-    background-color: hsl(270, 20%, 96%);
+    background-color: var(--tela_celular);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -195,8 +207,8 @@ i
     padding: 1rem;
     padding-bottom: 0rem;
     border-radius: 10px;
-    border: 1px solid hsl(270, 20%, 96%);
-    background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    border: var(--borda_cabecalho);
+    background: var(--cabecalho);
     z-index: 2;
     transition: all .5s ease;
 }
@@ -310,15 +322,19 @@ i
 .tela-celular-box-mensagens-outro, .tela-celular-box-mensagens-voce
 {
     padding: 0.5rem;
-    background-color: hsl(272, 57%, 91%);
     font-size: 9px;
-    color: hsl(276, 55%, 52%);
     font-weight: 400;
     border-radius: 12px;
     border-bottom-left-radius: 5px;
     max-width: 62%;
     line-height: 13px;
     transition: all 0.5s ease;
+}
+
+.tela-celular-box-mensagens-outro
+{
+    background-color: var(--box_msg_o);
+    color: var(--txt_msg_o);
 }
 
 /* MENSAGEM COM FOTOS */
@@ -363,8 +379,8 @@ i
 .tela-celular-box-mensagens-voce
 {
     align-self: flex-end;
-    color: hsl(271, 15%, 43%);
-    background-color: hsl(0, 0%, 100%);
+    color: var(--txt_msg_vc);
+    background-color: var(--box_msg_vc);
     border-bottom-right-radius: 5px;
 }
 
@@ -386,7 +402,7 @@ i
     padding: .5rem;
     border-radius: 10px;
     border-bottom-left-radius: 5px;
-    background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    background: var(--box_radio_btn);
     transition: all .5s ease;
 }
 #radio-button
