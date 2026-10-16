@@ -7,6 +7,8 @@ Chat App feito para o desafio de desenvolvimento front-end de [Frontend Mentor](
 ## Gracinhas :)
 - Mudar tema;
 - Adicionar papel de parede;
-- listar mensagem enviada.
+- Listar mensagens enviadas;
+- Resetar alterações;
+- Sair e voltar do app.
 
 [Ver Site](https://samygoes.github.io/chat-app/)
