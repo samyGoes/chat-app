@@ -1,25 +1,25 @@
 //#region VARIÁVEIS //
 const setaVoltar = document.querySelector("#tela-celular-cabecalho-box-seta");
 const setaInicial = document.querySelector(".tela-celular-inicial-box-seta");
-    //#region MUDAR TEMA/ABRIR E FECHAR MENU //
-    const telaCelular = document.querySelector(".tela-celular");
-    const cabecalho = document.querySelector(".tela-celular-cabecalho");
-    let tema = "";
-    // MENU //
-    const btnMenu = document.querySelector("#tela-celular-cabecalho-btn-menu");
-    const boxMenu = document.querySelector(".tela-celular-cabecalho-box-menu");
-    const menu = document.querySelector(".tela-celular-cabecalho-menu");
-    const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema")
-    // MENSAGENS //
-    const boxMinhasMsg = document.querySelectorAll(".tela-celular-box-mensagens-voce")
-    const boxOutroMsg = document.querySelectorAll(".tela-celular-box-mensagens-outro");
-    const boxRadioBtnOutro = document.querySelectorAll(".tela-celular-box-mensagens-radio-button-outro");
+//#region MUDAR TEMA/ABRIR E FECHAR MENU //
+const telaCelular = document.querySelector(".tela-celular");
+const cabecalho = document.querySelector(".tela-celular-cabecalho");
+let tema = "";
+// MENU //
+const btnMenu = document.querySelector("#tela-celular-cabecalho-btn-menu");
+const boxMenu = document.querySelector(".tela-celular-cabecalho-box-menu");
+const menu = document.querySelector(".tela-celular-cabecalho-menu");
+const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema")
+// MENSAGENS //
+const boxMinhasMsg = document.querySelectorAll(".tela-celular-box-mensagens-voce")
+const boxOutroMsg = document.querySelectorAll(".tela-celular-box-mensagens-outro");
+const boxRadioBtnOutro = document.querySelectorAll(".tela-celular-box-mensagens-radio-button-outro");
 
-    // PAPEL DE PAREDE //
-    const inputImg = document.querySelector("#inputImg");
-    //#endregion
+// PAPEL DE PAREDE //
+const inputImg = document.querySelector("#inputImg");
+//#endregion
 
-    //#region ENVIANDO MENSAGEM //
+//#region ENVIANDO MENSAGEM //
     const inputMsg = document.querySelector("#inputMsg");
     const formulario = document.querySelector(".tela-celular-box-escrever-mensagem");
     const boxMsg = document.querySelector(".tela-celular-box-mensagens");
@@ -27,7 +27,10 @@ const setaInicial = document.querySelector(".tela-celular-inicial-box-seta");
 //#endregion
 
 
-//#region FUNÇÕES //
+
+/**
+ * @description Abre e fecha o menu de opções.
+ */
 function menuLateral()
 {
     btnMenu.addEventListener("click", function()
@@ -50,8 +53,10 @@ function menuLateral()
         }
     });
 }
-menuLateral();
 
+/** 
+ * @description Altera o tema do app de claro (padrão) para escuro.
+*/
 function mudaTema() 
 {   
     btnMudarTemaMenu.addEventListener("click", function()
@@ -109,8 +114,10 @@ function mudaTema()
         //#endregion
     });        
 }
-mudaTema();
 
+/**
+ * @description Adiciona um papel de parede como plano de fundo da conversa.
+ */
 function papelDeParede()
 {
     inputImg.addEventListener("change", event =>
@@ -125,102 +132,35 @@ function papelDeParede()
         //teste();
     });
 }
-papelDeParede();
 
-// let a = 0;
-// function teste()
-// {
-//     let fP = papelDeParede();
-    
-//     if(fP != undefined)
-//     {
-//         console.log("ON");
-//     }
-//     else
-//     {
-//         console.log("OFF" + a++);
-//     }
-// }
-// teste();
-
+/**
+ * @description Cria uma caixinha de mensagem quando você envia um texto.
+ */
 function enviaMsg()
 {
     formulario.addEventListener("submit", function(e)
     {
-        // Pegando o que foi escrito
-        let mensagemEscrita = inputMsg.value;
-
         // Impede o envio do form
         e.preventDefault();
+
+        // Não deixa enviar uma mensagem vazia
+        if (inputMsg.value == "") { return }
 
         // "Criando" a mensagem
         const mensagemEnviar = document.createElement("p");
         mensagemEnviar.className = "tela-celular-box-mensagens-voce";
         mensagemEnviar.id = "msgsEnviadas";
-        mensagemEnviar.innerHTML = mensagemEscrita;
+        mensagemEnviar.innerHTML = inputMsg.value;
         boxMsg.appendChild(mensagemEnviar);
 
-        return(mensagemEscrita);
+        // Limpando o input
+        inputMsg.value = ""
     })
 }
-let retornoEnviaMsg = enviaMsg();
-function msgSecreta(mensagemEscrita)
-{
-    //#region VARIÁVEIS // 
-    const dog1 = document.querySelector("#dog-1");
-    const dog2 = document.querySelector("#dog-2");
-    const dog3 = document.querySelector("#dog-3");
 
-    dog1.dataset.content = "dogas";
-    dog2.dataset.content = "pogs";
-    dog3.dataset.content = "fofo";
-    
-    let style = document.querySelector("style");
-    let dog1Before = window.getComputedStyle(dog1,':before');
-    let dog2Before = window.getComputedStyle(dog2,':before');
-    let dog3Before = window.getComputedStyle(dog3,':before');
-    //#endregion
-
-    // CLICANDO EM CADA FOTO //
-    dog1.addEventListener("click", function()
-    {
-        if(dog1Before.display == "none" || dog1Before.display == "")
-        {
-            style.sheet.insertRule(` #dog-1::before {display: flex;} `, style.sheet.cssRules.length);
-        }
-        else
-        {
-            style.sheet.insertRule(` #dog-1::before {display: none;} `, style.sheet.cssRules.length);
-        }
-        let a = mensagemEscrita;
-        console.log("Essa é a msg: ", a);
-    });
-    dog2.addEventListener("click", function()
-    {
-        if(dog2Before.display == "none" || dog2Before.display == "")
-        {
-            style.sheet.insertRule(` #dog-2::before {display: flex;} `, style.sheet.cssRules.length);
-        }
-        else
-        {
-            style.sheet.insertRule(` #dog-2::before {display: none;} `, style.sheet.cssRules.length);
-        }
-    });
-    dog3.addEventListener("click", function()
-    {
-        if(dog3Before.display == "none" || dog3Before.display == "")
-        {
-            style.sheet.insertRule(` #dog-3::before {display: flex;} `, style.sheet.cssRules.length);
-        }
-        else
-        {
-            style.sheet.insertRule(` #dog-3::before {display: none;} `, style.sheet.cssRules.length);
-        }
-    });
-    
-}
-msgSecreta(retornoEnviaMsg);
-
+/**
+ * @description Sai da tela do chat quando clica na setinha.
+ */
 function voltar()
 {
     setaVoltar.addEventListener("click", function()
@@ -228,8 +168,10 @@ function voltar()
         telaCelular.style.transform = "translateX(105%)";
     });
 }
-voltar();
 
+/**
+ * @description Entra na tela do chat quando clica na setinha.
+ */
 function abrirApp()
 {
     setaInicial.addEventListener("click", function()
@@ -237,19 +179,13 @@ function abrirApp()
         telaCelular.style.transform = "translateX(0px)";
     }); 
 }
-abrirApp();
 
-function teste()
-{
-    let a = 0;
-    // console.log("função rodou");
-    for(let i = 1; i <= 5; i++)
-    {
-        a = a + 1;
-        console.log(a);
-    }
-    
-}
-teste();
-//#endregion
+
+
+menuLateral();
+mudaTema();
+papelDeParede();
+enviaMsg()
+voltar();
+abrirApp();
 
