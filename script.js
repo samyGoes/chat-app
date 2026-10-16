@@ -7,7 +7,8 @@ let tema = "claro";
 const btnMenu = document.querySelector("#tela-celular-cabecalho-btn-menu");
 const boxMenu = document.querySelector(".tela-celular-cabecalho-box-menu");
 const menu = document.querySelector(".tela-celular-cabecalho-menu");
-const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema")
+const btnMudarTemaMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-tema");
+const btnResetarMenu = document.querySelector(".tela-celular-cabecalho-menu-btn-reset");
 
 // PAPEL DE PAREDE //
 const inputImg = document.querySelector("#inputImg");
@@ -99,6 +100,17 @@ function papelDeParede()
 }
 
 /**
+ * @description Atualiza a página para resetar tudo o que foi alterado.
+ */
+function resetar()
+{
+    btnResetarMenu.addEventListener("click", function()
+    {
+        window.location.reload();
+    });  
+}
+
+/**
  * @description Cria uma caixinha de mensagem quando você envia um texto.
  */
 function enviaMsg()
@@ -150,6 +162,7 @@ function abrirApp()
 menuLateral();
 mudaTema();
 papelDeParede();
+resetar();
 enviaMsg()
 voltar();
 abrirApp();
